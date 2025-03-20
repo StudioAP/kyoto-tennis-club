@@ -1,0 +1,791 @@
+/* 
+京都ローンテニスクラブ スタイルシート
+*/
+
+/* ベーススタイル */
+:root {
+    --primary-color: #3c8a51;
+    --secondary-color: #79b791;
+    --accent-color: #c09a5b;
+    --text-color: #333;
+    --light-text: #fff;
+    --dark-bg: #2c6a3c;
+    --light-bg: #f5f5f5;
+    --border-color: #e0e0e0;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: #fff;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.section-description {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+}
+
+/* ボタンスタイル */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-bg);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+}
+
+.btn-secondary:hover {
+    background-color: #ab8a4f;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.btn-outline {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: transparent;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.center-btn {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* ヘッダー */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    padding: 15px 0;
+    transition: all 0.3s ease;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo a {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.logo-sub {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    margin-left: 25px;
+}
+
+.menu a {
+    font-size: 0.95rem;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* ヒーローセクション */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/hero-tennis.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light-text);
+    padding: 0 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-buttons .btn {
+    margin: 0 10px;
+}
+
+/* クラブ紹介 */
+.club-intro {
+    background-color: var(--light-bg);
+}
+
+.club-intro-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.intro-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.intro-image:hover {
+    transform: scale(1.03);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.feature h3 {
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--text-color);
+}
+
+/* 体験セクション */
+.trial {
+    background-color: #fff;
+}
+
+.trial-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.trial-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.trial-info ul {
+    list-style: disc inside;
+    margin-bottom: 1.5rem;
+}
+
+.trial-info li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.trial-image {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+/* 料金表 */
+.membership {
+    background-color: var(--light-bg);
+}
+
+.membership-image-container {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.membership-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.membership-image:hover {
+    transform: scale(1.02);
+}
+
+.price-note {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.price-table-container {
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.price-table th, .price-table td {
+    padding: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.price-table th {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    font-weight: 500;
+}
+
+.price-table tr:nth-child(even) {
+    background-color: rgba(121, 183, 145, 0.1);
+}
+
+.visitor-fee {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+}
+
+/* お知らせセクション */
+.news {
+    background-color: #fff;
+}
+
+.news-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.news-item {
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.news-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.news-date {
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.news-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.news-content ul {
+    list-style: disc inside;
+    margin-left: 10px;
+}
+
+.news-content li {
+    margin-bottom: 5px;
+}
+
+/* 会員の声 */
+.testimonials {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/testimonial-bg.jpg') no-repeat center center;
+    background-size: cover;
+    color: var(--light-text);
+}
+
+.testimonials .section-title {
+    color: var(--light-text);
+}
+
+.testimonial-item {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.testimonial-content p {
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* アクセス情報 */
+.access {
+    background-color: var(--light-bg);
+}
+
+.access-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.access-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.access-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.access-info p {
+    margin-bottom: 10px;
+}
+
+.access-info ul {
+    list-style: disc inside;
+    margin: 10px 0 20px;
+}
+
+.access-info li {
+    margin-bottom: 10px;
+}
+
+.club-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.club-photo {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.club-photo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.map {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.access-buttons {
+    text-align: center;
+}
+
+.access-buttons .btn {
+    margin: 0 10px;
+}
+
+/* フッター */
+footer {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    padding: 50px 0 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-info {
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 30px;
+}
+
+.footer-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-info h3 span {
+    font-size: 0.9rem;
+    display: block;
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
+.footer-info p {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.footer-nav {
+    flex: 1;
+    min-width: 200px;
+    max-width: 400px;
+}
+
+.footer-nav ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.footer-nav a {
+    display: block;
+    padding: 5px 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.footer-nav a:hover {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* モーダル */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #333;
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 992px) {
+    .club-intro-images,
+    .club-photos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero h2 {
+        font-size: 2.3rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: #fff;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+    
+    .menu.active {
+        display: flex;
+    }
+    
+    .menu li {
+        margin: 10px 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .feature {
+        padding: 20px;
+    }
+    
+    .testimonial-content p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .club-intro-images,
+    .club-photos {
+        grid-template-columns: 1fr;
+    }
+    
+    .intro-image,
+    .club-photo {
+        height: auto;
+    }
+
+    .container {
+        padding: 40px 20px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons .btn {
+        margin: 5px;
+        display: block;
+        width: 100%;
+    }
+    
+    .feature h3 {
+        font-size: 1rem;
+    }
+}
